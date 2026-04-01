@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+app.get("/", (req, res) => {
+  res.send("API Running");
+});
+
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
